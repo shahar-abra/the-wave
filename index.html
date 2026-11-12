@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Wave – Study Guide</title>
+<meta name="theme-color" content="#14213d">
+<style>
+:root{--bg:#f5f1e8;--card:#fffdf8;--ink:#14213d;--soft:#5a6478;--line:#ddd5c3;--blue:#1d4e89;--red:#b3262c;--hl:#ffd75e;--ok:#1f7a4d;--okbg:#e2f3ea;--nobg:#f9e3e3}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1524;--card:#18223a;--ink:#eef0f5;--soft:#a3adc2;--line:#2c3856;--blue:#7fb2ee;--red:#f0696e;--hl:#c99a10;--ok:#6fd3a0;--okbg:#173b2c;--nobg:#47201f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;padding-bottom:150px}
+header{background:#14213d;color:#fff;padding:18px 16px 16px;display:flex;gap:12px;align-items:center}
+header svg{flex:none}
+header h1{font:700 24px/1.1 Georgia,serif;margin:0;letter-spacing:.5px}
+header p{margin:2px 0 0;font-size:13px;opacity:.75}
+main{max-width:680px;margin:0 auto;padding:16px}
+section{display:none}section.on{display:block}
+h2{font:700 22px/1.25 Georgia,serif;margin:6px 0 10px}
+h3{font-size:17px;margin:0 0 4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 12px}
+.muted{color:var(--soft);font-size:14px}
+.he{direction:rtl;text-align:right;font-family:Arial,"Arial Hebrew",sans-serif}
+.hebox{border-inline-start:4px solid var(--blue);background:var(--card);border-radius:10px;padding:10px 14px;margin:12px 0}
+.hebox b{color:var(--blue)}
+/* story */
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 16px inherit}
+.chips button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (prefers-color-scheme:dark){.chips button.on{color:#0e1524}}
+#text p{margin:0 0 14px;font-size:19px;line-height:1.75}
+#text span{border-radius:4px;padding:1px 0;cursor:pointer}
+#text span.w{background:var(--hl);color:#14213d;box-shadow:0 0 0 2px var(--hl)}
+details{border:1px solid var(--line);border-radius:10px;background:var(--card);margin:0 0 10px}
+summary{padding:12px 14px;font-weight:600;cursor:pointer}
+details>div{padding:0 14px 12px}
+table{width:100%;border-collapse:collapse;font-size:16px}
+td{padding:6px 0;border-top:1px solid var(--line);vertical-align:top}
+td.he{width:50%}
+/* player */
+#player{position:fixed;left:0;right:0;bottom:calc(58px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line);display:none;justify-content:center;align-items:center;gap:14px;padding:8px 12px}
+#player.on{display:flex}
+#player button,#player select{height:44px;min-width:44px;border-radius:22px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:600 15px inherit;padding:0 12px}
+#play{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important;min-width:120px!important;font-size:16px!important}
+@media (prefers-color-scheme:dark){#play{color:#0e1524!important}}
+nav{position:fixed;left:0;right:0;bottom:0;background:#14213d;display:flex;padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;height:58px;background:none;border:0;color:#aab4c8;font:600 12px inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+nav button i{font-style:normal;font-size:19px}
+nav button.on{color:#fff;box-shadow:inset 0 3px 0 #e2494f}
+/* quiz */
+.opt{display:block;width:100%;text-align:left;padding:11px 12px;margin:6px 0;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.no{background:var(--nobg);border-color:var(--red)}
+.why{display:none;font-size:15px;margin-top:6px;color:var(--soft)}
+.done .why{display:block}
+#score{position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;z-index:1}
+.tag{display:inline-block;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.6px}
+ul{padding-left:20px;margin:6px 0}
+</style>
+</head>
+<body>
+<header>
+  <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="21" fill="none" stroke="#e2494f" stroke-width="3"/><path d="M7 27c5-9 10-9 16 0s11 9 16 0" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+  <div><h1>The Wave</h1><p>Morton Rhue · study guide for the exam</p></div>
+</header>
+
+<main>
+<section id="story" class="on">
+  <div class="chips" id="chips"></div>
+  <span class="tag" id="partno"></span>
+  <h2 id="title"></h2>
+  <p class="muted" id="hint">Press Listen. Tap any word to start reading from there.</p>
+  <div id="text"></div>
+  <div class="hebox he" lang="he"><b>בקצרה: </b><span id="he"></span></div>
+  <details><summary>Hard words · מילים קשות</summary><div><table id="vocab"></table></div></details>
+</section>
+
+<section id="people"><h2>Characters</h2><div id="peopleList"></div></section>
+<section id="ideas"><h2>Themes &amp; exam ideas</h2><div id="ideasList"></div></section>
+<section id="quiz"><h2>Practice quiz</h2><div id="score"></div><div id="quizList"></div></section>
+<section id="exam"><h2>Open exam questions</h2><p class="muted">Try to answer aloud or on paper first. Then open the model answer.</p><div id="examList"></div></section>
+</main>
+
+<div id="player" class="on">
+  <button id="prev" aria-label="Previous part">‹ Prev</button>
+  <button id="play">▶ Listen</button>
+  <select id="rate" aria-label="Speed"><option value="0.75">Slow</option><option value="0.95" selected>Normal</option><option value="1.2">Fast</option></select>
+  <button id="next" aria-label="Next part">Next ›</button>
+</div>
+
+<nav id="nav">
+  <button data-s="story" class="on"><i>📖</i>Story</button>
+  <button data-s="people"><i>👥</i>People</button>
+  <button data-s="ideas"><i>💡</i>Ideas</button>
+  <button data-s="quiz"><i>✅</i>Quiz</button>
+  <button data-s="exam"><i>✍️</i>Exam</button>
+</nav>
+
+<script>
+const PARTS=[
+{t:`A Question Nobody Can Answer`,
+p:[`Ben Ross is a young and popular history teacher at Gordon High School, an ordinary American school. His class is studying the Second World War. One day he shows a film about Nazi Germany and the concentration camps, where millions of Jews and other people were murdered.`,
+`The students are shocked. After the film they ask hard questions. How could the German people let this happen? Only a small part of the Germans were Nazis, so why did nobody stop them? How could they say later that they did not know?`,
+`Mr Ross does not have a good answer, and this bothers him. Laurie Saunders, a clever student and the editor of the school newspaper, The Grapevine, is very upset by the film. Her boyfriend David Collins, a football player, thinks it is just history and tells her to forget it. That night, Ben Ross decides to try an experiment, so his students can feel what life in Nazi Germany was like.`],
+he:`בן רוס, מורה להיסטוריה בתיכון גורדון, מקרין סרט על השואה. התלמידים שואלים איך העם הגרמני נתן לזה לקרות, ולמורה אין תשובה. לכן הוא מחליט לערוך ניסוי בכיתה.`,
+v:[[`concentration camps`,`מחנות ריכוז`],[`shocked`,`המומים`],[`bothers him`,`מטריד אותו`],[`editor`,`עורכת`],[`experiment`,`ניסוי`]]},
+
+{t:`Strength Through Discipline`,
+p:[`The next day Mr Ross writes three words on the board: Strength Through Discipline. He tells the class that discipline gives power and success. He teaches them to sit up straight, with their feet flat on the floor. They practise running to their seats quickly and quietly.`,
+`There are new rules for answering questions. A student must stand next to the desk, begin with the words "Mr Ross", and give a short, quick answer. Mr Ross expected the class to laugh at these rules. Instead, the students enjoy them. They feel sharp and full of energy.`,
+`Even Robert Billings takes part. Robert is the class loser. He is untidy, he has no friends, and the others laugh at him. Now, for the first time, he sits straight and answers like everybody else. Ben Ross goes home surprised. The students liked discipline much more than he thought they would.`],
+he:`רוס מלמד את הכיתה משמעת: ישיבה זקופה, תשובות קצרות בעמידה, פנייה אליו בשם "מר רוס". להפתעתו התלמידים נהנים מזה, ואפילו רוברט, התלמיד הדחוי, משתתף.`,
+v:[[`strength`,`כוח, עוצמה`],[`discipline`,`משמעת`],[`practise`,`מתרגלים`],[`untidy`,`מוזנח, לא מסודר`],[`takes part`,`משתתף`]]},
+
+{t:`The Wave Is Born`,
+p:[`When Mr Ross comes to the next lesson, the students are already sitting straight and silent, waiting for him. He decides to continue. He adds a second motto: Strength Through Community. A community, he says, is a group of people who work together for one goal.`,
+`He gives the group a name, The Wave, and a symbol, a wave inside a circle. He also teaches a salute. The right hand is curved like a wave and touches the left shoulder. Every member must give the salute when meeting another member.`,
+`David is excited. He brings The Wave to the football team, which keeps losing because the players do not work together. At dinner, Laurie tells her parents about it. Her father thinks it sounds good. Her mother is worried. She says it sounds like the army, and that people must learn to think for themselves. Laurie feels a little uncomfortable, but she does not know why.`],
+he:`נוסף מוטו שני: "כוח דרך קהילה". לקבוצה יש שם ("הגל"), סמל והצדעה. דיוויד מביא את הגל לקבוצת הפוטבול. אמא של לורי מודאגת: זה נשמע לה כמו צבא, וחשוב לחשוב באופן עצמאי.`,
+v:[[`motto`,`סיסמה, מוטו`],[`community`,`קהילה`],[`goal`,`מטרה`],[`salute`,`הצדעה`],[`member`,`חבר בקבוצה`],[`worried`,`מודאגת`]]},
+
+{t:`The Wave Spreads`,
+p:[`Mr Ross gives out membership cards. Some cards have a red X on the back. The students who get them are monitors. Their job is to report any member who breaks the rules of The Wave. Then comes the third motto: Strength Through Action. Members must bring new members into the movement.`,
+`The Wave spreads fast through the whole school. There are posters and banners, and a big rally is planned. In The Wave everybody is equal. Nobody is more popular or more clever than anybody else. Robert Billings changes the most. Nobody laughs at him now. He belongs to something, and he is proud.`,
+`But some things worry Laurie. Students stop thinking and simply follow. The homework is neat but the answers are short, without real ideas. Ben Ross himself begins to enjoy being the leader. His wife Christy, who also teaches at the school, warns him that he is becoming part of his own experiment.`],
+he:`מחולקים כרטיסי חבר, וחלק מהתלמידים הופכים ל"משגיחים" שמדווחים על מי שמפר את הכללים. המוטו השלישי: "כוח דרך פעולה". הגל מתפשט בכל בית הספר. רוברט סוף סוף שייך, אבל התלמידים מפסיקים לחשוב בעצמם, והמורה מתחיל ליהנות מהכוח.`,
+v:[[`membership cards`,`כרטיסי חבר`],[`monitors`,`משגיחים`],[`report`,`לדווח`],[`movement`,`תנועה`],[`rally`,`עצרת`],[`equal`,`שווה`],[`warns`,`מזהירה`]]},
+
+{t:`The First Cracks`,
+p:[`Robert asks Mr Ross if he can be his bodyguard. Mr Ross is surprised, but he agrees. Now Robert follows him everywhere. Christy tells Ben that the other teachers are talking about him, and Principal Owens calls him to his office. Ben promises that the experiment is under control.`,
+`Then The Grapevine receives a letter with no name on it. A younger student writes that an older student pushed him to join The Wave and threatened him when he said no. He is afraid, so he does not sign the letter.`,
+`Next, a boy is beaten up at school. He is Jewish, and he refused to join The Wave. Laurie's father hears about it and is angry. Laurie now understands that The Wave is dangerous. People who are not members are treated like enemies. She refuses to go to the Wave rally. Her best friend Amy does not understand her, and they argue.`],
+he:`רוברט נעשה שומר הראש של רוס. לעיתון מגיע מכתב אנונימי מתלמיד שאיימו עליו כי סירב להצטרף, ותלמיד יהודי שסירב להצטרף מוכה. לורי מבינה שהגל מסוכן ומסרבת ללכת לעצרת.`,
+v:[[`bodyguard`,`שומר ראש`],[`principal`,`מנהל בית הספר`],[`threatened`,`איים`],[`beaten up`,`הוכה`],[`refused`,`סירב`],[`enemies`,`אויבים`],[`argue`,`מתווכחות`]]},
+
+{t:`Laurie Against the Wave`,
+p:[`On Saturday there is a football game. Laurie wants to watch, but Brad, a Wave member, stops her at the stands. He will not let her in unless she gives the Wave salute. Laurie refuses and walks away. The team loses the game anyway. The Wave gave the players a feeling of unity, but it did not make them play better.`,
+`Laurie and the newspaper staff decide to act. They publish a special issue of The Grapevine about The Wave. It includes the letter with no name, the story of the boy who was beaten up, and an article by Laurie. She writes that The Wave is a dangerous movement that takes away freedom of thought.`,
+`The newspaper makes many students think again. Teachers and parents complain to the principal. But the loyal Wave members are angry. They call Laurie an enemy. Robert says that she is a threat and must be stopped. Laurie loses friends, and she is afraid to walk alone in the school.`],
+he:`במשחק הפוטבול לא נותנים ללורי להיכנס ליציע בלי להצדיע, והקבוצה מפסידה בכל זאת. לורי והעיתון מפרסמים גיליון מיוחד נגד הגל. חברי הגל כועסים ורואים בה אויבת.`,
+v:[[`stands`,`יציע`],[`unity`,`אחדות`],[`staff`,`צוות`],[`publish`,`מפרסמים`],[`issue`,`גיליון`],[`complain`,`מתלוננים`],[`loyal`,`נאמנים`],[`threat`,`איום`]]},
+
+{t:`It Has Gone Too Far`,
+p:[`That evening Laurie is working late at the newspaper office. When she leaves, she finds the word "enemy" written on her locker. She feels that somebody is following her in the dark, empty school, and she runs outside.`,
+`David is waiting for her. The other Wave members sent him to make her stop writing against The Wave. They argue. Laurie will not give up. David becomes angry, grabs her, and throws her down on the grass.`,
+`Suddenly David is shocked by what he has done. He has hurt the girl he loves because of The Wave. Now he understands that Laurie was right. Together they go to Mr Ross's house, late at night, and beg him to stop The Wave. Ben Ross already knows that it has gone too far. Principal Owens has told him to end it. He asks Laurie and David to trust him and to give him one more day.`],
+he:`על הלוקר של לורי כותבים "אויבת". דיוויד מנסה לשכנע אותה להפסיק, מתעצבן ומפיל אותה ארצה. הוא נבהל ממה שעשה ומבין שהיא צדקה. שניהם הולכים לביתו של רוס ומבקשים שיעצור את הגל. רוס מבקש עוד יום אחד.`,
+v:[[`locker`,`לוקר, תא אישי`],[`give up`,`לוותר`],[`grabs`,`תופס`],[`beg`,`מתחננים`],[`trust`,`לבטוח`]]},
+
+{t:`The Leader Is Revealed`,
+p:[`The next day Mr Ross tells his class surprising news. The Wave is not only a class game. It is a new national youth movement, and its national leader will speak to them on television at a rally that afternoon. Only Wave members may come.`,
+`The hall is full of excited students with banners. Robert stands guard. But the television screens stay empty. The students become restless. Then Mr Ross shouts: "There is your leader!" A film begins. It shows Adolf Hitler and the Nazi youth.`,
+`There is no leader and no national movement, Mr Ross explains. He tells them that they would all have made good Nazis. They gave up their freedom and their own thinking for the group, and they hurt people who did not agree. This is how it happened in Germany. He also says that he made mistakes himself and enjoyed the power too much.`,
+`The students leave quietly, ashamed, and drop their cards and banners on the floor. Laurie and David thank Mr Ross. Only Robert stays behind, alone and crying. Without The Wave he is nobody again. Mr Ross goes to him and takes him out to talk.`],
+he:`רוס מודיע שהגל הוא תנועת נוער ארצית ושהמנהיג יופיע בטלוויזיה בעצרת. בעצרת הוא מקרין סרט של היטלר: "הנה המנהיג שלכם!". הוא מסביר שכולם היו יכולים להיות נאצים טובים, כי ויתרו על החופש ועל החשיבה העצמאית. התלמידים עוזבים מבוישים, ורק רוברט נשאר לבד ובוכה.`,
+v:[[`national`,`ארצי, לאומי`],[`youth movement`,`תנועת נוער`],[`restless`,`חסרי מנוחה`],[`gave up`,`ויתרו על`],[`ashamed`,`מבוישים`],[`power`,`כוח, שלטון`]]}
+];
+
+const PEOPLE=[
+[`Ben Ross`,`History teacher`,`Young, popular and full of energy. He starts The Wave to teach a lesson about Nazi Germany. Slowly he begins to enjoy being a leader and almost loses control. In the end he stops the movement and admits his own mistakes.`,`המורה להיסטוריה. מתחיל את הניסוי מתוך כוונה טובה, נסחף אחרי הכוח, ובסוף עוצר את הגל.`],
+[`Laurie Saunders`,`Main character, newspaper editor`,`Clever, popular and independent. At first she joins The Wave, but she is the first to see the danger. She writes against it in The Grapevine even when she loses friends. She stands for thinking for yourself.`,`הדמות הראשית. הראשונה שמבינה את הסכנה ומעזה להתנגד, גם במחיר של אובדן חברים.`],
+[`David Collins`,`Laurie's boyfriend, football player`,`He loves The Wave because he hopes it will help the team. He follows the group without thinking, until he hurts Laurie. That moment wakes him up.`,`החבר של לורי. הולך אחרי הקבוצה בעיניים עצומות עד שהוא פוגע בלורי ומתעורר.`],
+[`Robert Billings`,`The class loser`,`Lonely and laughed at, he lives in the shadow of his successful older brother. The Wave gives him respect and a place, so he becomes its most loyal member and Mr Ross's bodyguard. When The Wave ends, he loses everything.`,`התלמיד הדחוי. הגל נותן לו כבוד ושייכות, ולכן הוא הנאמן ביותר והנפגע העיקרי כשהגל נגמר.`],
+[`Amy Smith`,`Laurie's best friend`,`She always felt second to Laurie. In The Wave she is finally equal to her, so she does not want to leave it. Their friendship breaks for a while.`,`החברה הטובה של לורי. בגל היא סוף סוף שווה ללורי, ולכן לא רוצה לעזוב.`],
+[`Christy Ross`,`Ben's wife, music teacher`,`She sees the change in Ben before he does and warns him that he has become part of his own experiment.`,`אשתו של בן. מזהירה אותו שהוא עצמו נהפך לחלק מהניסוי.`],
+[`Mrs Saunders`,`Laurie's mother`,`She is against The Wave from the first day. She says it is like the army and that people must think for themselves. Mr Saunders likes the idea at first and changes his mind after the Jewish boy is attacked.`,`אמא של לורי. מתנגדת מההתחלה. האב תומך בהתחלה ומשנה את דעתו אחרי התקיפה.`],
+[`Principal Owens`,`Head of the school`,`He lets the experiment continue at first, but after the complaints he tells Ben Ross to end it.`,`מנהל בית הספר. מאפשר את הניסוי ואחר כך דורש לסיים אותו.`],
+[`Brad, Brian and Eric`,`Wave members`,`Brad used to pick on Robert and later blocks Laurie at the game. Brian is the football team's quarterback. Eric is David's friend who also wakes up at the end. They show how ordinary students follow the group.`,`תלמידים רגילים שנסחפים אחרי הקבוצה.`],
+[`Carl Block and Alex Cooper`,`Grapevine reporters`,`The jokers of the newspaper. They never take The Wave seriously and help Laurie with the special issue.`,`כתבי העיתון. לא מתרשמים מהגל ועוזרים ללורי.`]
+];
+
+const IDEAS=[
+[`The individual and the group`,`The main idea of the book. Belonging to a group feels good and gives strength, but the price can be your freedom and your own opinion. In The Wave nobody is allowed to be different.`,`היחיד מול הקבוצה: השייכות נותנת כוח, אבל המחיר הוא החופש והדעה העצמית.`],
+[`How fascism can happen anywhere`,`The students were sure that what happened in Germany could never happen to them. In less than two weeks they behaved in the same way. The message: fascism is not only "those other people". It can grow in ordinary people, in a normal school.`,`המסר המרכזי: זה יכול לקרות בכל מקום, גם לאנשים רגילים.`],
+[`Why did the students join?`,`<ul><li>They wanted to belong and to be equal (Robert, Amy).</li><li>They wanted success (David and the football team).</li><li>Discipline felt easy: somebody else decides for you.</li><li>Peer pressure: everybody was doing it.</li><li>Fear of being left out or attacked.</li></ul>`,`סיבות להצטרפות: שייכות, שוויון, הצלחה, לחץ חברתי ופחד.`],
+[`Power and the leader`,`Power changes people. Ben Ross is a good man, but he starts to enjoy being obeyed. Robert gets power for the first time and uses it against others. A leader is dangerous when nobody asks questions.`,`כוח משנה אנשים, גם את המורה. מנהיג מסוכן כשאף אחד לא שואל שאלות.`],
+[`Thinking for yourself and courage`,`Laurie and her mother stand for independent thinking. It takes courage to say "no" when everybody says "yes". The newspaper shows the power of free speech.`,`חשיבה עצמאית ואומץ להתנגד. העיתון מייצג את חופש הביטוי.`],
+[`The Wave and Nazi Germany`,`<ul><li>Mr Ross = the leader (Hitler)</li><li>The salute, symbol and mottos = Nazi salute, swastika and slogans</li><li>Monitors with a red X = informers, secret police</li><li>Membership cards and the rally = the Nazi party and its mass rallies</li><li>The attack on the Jewish boy = persecution of the Jews</li><li>The students who "did not notice" = the Germans who said they did not know</li></ul>`,`ההקבלה לגרמניה הנאצית: מנהיג, הצדעה, סמל, סיסמאות, מלשינים, עצרות ורדיפת מי שלא שייך.`],
+[`Symbols`,`<ul><li><b>The wave:</b> strong movement in one direction that carries everything with it. A wave also breaks in the end.</li><li><b>The three mottos:</b> Discipline, Community, Action. Each step takes away a little more freedom.</li><li><b>The Grapevine:</b> free press and truth.</li></ul>`,`סמלים: הגל (כוח שסוחף הכול ובסוף נשבר), שלוש הסיסמאות, והעיתון (חופש העיתונות).`],
+[`The true story`,`The book is based on a real experiment. In 1967 a history teacher named Ron Jones did it with his class at a high school in Palo Alto, California. He called it "The Third Wave". It lasted about a week. The novel was written in 1981 by Todd Strasser, who used the pen name Morton Rhue.`,`הספר מבוסס על ניסוי אמיתי של המורה רון ג'ונס בקליפורניה ב-1967 ("הגל השלישי").`]
+];
+
+const QUIZ=[
+[`Why does Ben Ross start the experiment?`,[`He wants to become popular`,`He cannot answer how the Germans let the Holocaust happen`,`The principal asks him to`,`He wants to help the football team`],1,`The students' questions after the film bother him, so he wants them to feel the answer.`],
+[`What is the first motto?`,[`Strength Through Action`,`Strength Through Community`,`Strength Through Discipline`,`Strength Through Unity`],2,`The order is Discipline, Community, Action.`],
+[`How must students answer a question in the new system?`,[`Sitting, with a long answer`,`Standing, starting with "Mr Ross", short and quick`,`By raising a membership card`,`In writing only`],1,`Short answers while standing: obedience instead of deep thinking.`],
+[`What does the Wave salute look like?`,[`A raised straight arm`,`A hand on the heart`,`A curved right hand touching the left shoulder`,`Two fingers on the forehead`],2,`The hand is shaped like a wave.`],
+[`What does a red X on a membership card mean?`,[`The student is a monitor who reports rule-breakers`,`The student is not a real member`,`The student is a leader of the school`,`The student failed a test`],0,`Monitors are like informers in a dictatorship.`],
+[`Who is against The Wave from the very beginning?`,[`Mr Saunders`,`Amy`,`Mrs Saunders`,`David`],2,`Laurie's mother says it sounds like the army and that people must think for themselves.`],
+[`Why is The Wave so important to Robert Billings?`,[`He wants better grades`,`For the first time he belongs and is respected`,`He wants to play football`,`He is in love with Laurie`],1,`He was the class loser. The Wave makes him equal.`],
+[`What job does Robert take?`,[`Editor of the newspaper`,`Team captain`,`Mr Ross's bodyguard`,`Class president`],2,`It shows how far he and Mr Ross have gone.`],
+[`What happens to the boy who refuses to join The Wave?`,[`He is beaten up`,`He leaves the school`,`He writes for The Grapevine`,`Nothing happens`],0,`He is Jewish, which makes the link to Nazi Germany very clear.`],
+[`What happens to Laurie at the football game?`,[`She gives a speech`,`She is not allowed into the stands without the salute`,`She joins the team`,`She is given a red X`],1,`Brad blocks her. Non-members are shut out.`],
+[`How does Laurie fight The Wave?`,[`She tells the police`,`She starts another movement`,`She publishes a special issue of The Grapevine`,`She leaves the school`],2,`She uses the free press and the truth.`],
+[`What makes David understand that The Wave is wrong?`,[`The team loses`,`Mr Ross tells him`,`He reads the newspaper`,`He throws Laurie to the ground`],3,`He is shocked that he hurt the girl he loves because of the group.`],
+[`Who is the "national leader" shown at the rally?`,[`Ben Ross`,`Adolf Hitler`,`Principal Owens`,`Nobody appears at all`],1,`Mr Ross shows a film of Hitler: "There is your leader!"`],
+[`What does Mr Ross tell the students at the end?`,[`That they failed the course`,`That The Wave will continue next year`,`That they would all have made good Nazis`,`That Laurie was wrong`],2,`They gave up freedom and thinking for the group, just like in Germany.`],
+[`Who is hurt the most by the end of The Wave?`,[`Laurie`,`David`,`Amy`,`Robert`],3,`Without The Wave he is a loser again. He stays alone, crying.`],
+[`The book is based on...`,[`A real experiment in California in 1967`,`A German film`,`The writer's dream`,`A story from the Second World War`],0,`Teacher Ron Jones, Palo Alto, "The Third Wave".`]
+];
+
+const EXAM=[
+[`Why did Ben Ross start The Wave, and what did he want his students to learn?`,`After the film about the Holocaust, the students asked how the German people could let it happen and why nobody resisted. Mr Ross had no answer. He started the experiment so that the students would not only hear about it but feel it: how easy it is to follow a leader and a group, and to stop thinking. In the end the students learned that it could happen to them too.`],
+[`Why was The Wave so attractive to the students? Give examples.`,`It gave them a sense of belonging, equality and power. Robert, the class loser, was accepted for the first time. Amy stopped feeling second to Laurie. David hoped the unity would help the football team. Discipline was also comfortable, because the leader decides and you do not need to think. Finally, there was peer pressure: when everybody joins, it is hard to stay outside.`],
+[`Describe how Laurie changes during the story.`,`At the beginning Laurie is a popular, successful student who joins The Wave like everyone else. Her mother's warning and her own feelings make her doubt it. After the anonymous letter and the attack on the Jewish boy she understands the danger. She refuses to go to the rally, is stopped at the football game, and publishes the special issue of The Grapevine. She pays a price: she loses friends, is called an enemy and is attacked by David. She shows courage and independent thinking.`],
+[`Compare The Wave to Nazi Germany.`,`Both had a strong leader who was obeyed without questions, a salute, a symbol, slogans and mass rallies. Both promised unity and strength. In both, members watched and reported each other (the monitors), and people who did not belong were treated as enemies and attacked (the Jewish boy, Laurie). In both, ordinary people gave up their freedom and said they did not notice what was happening.`],
+[`How does Ben Ross change, and what does this teach us about power?`,`He begins as a teacher with a good purpose. But he starts to enjoy the students' obedience and his new importance. He accepts a bodyguard and does not stop even when Christy and the principal warn him. This shows that power can change even a good person, and that a leader also gets carried away by the movement. At the end he takes responsibility and admits he was wrong too.`],
+[`What is the role of Robert Billings in the book?`,`Robert shows why weak and lonely people are drawn to such movements. The Wave gives him what he never had: respect, a role and a group. So he becomes the most loyal and the most extreme member. He also shows the cruelty of the experiment, because when it ends he has the most to lose. The last picture of the book is Robert crying alone.`],
+[`What is the message of the book? Is it still relevant today?`,`The message is that fascism and blind obedience can appear anywhere, among ordinary people. To prevent it, each person must think for themselves, ask questions and have the courage to say no to the group. It is still relevant: peer pressure, social networks, bullying of people who are different and following strong leaders without thinking exist today too. (Add your own example.)`],
+[`Explain the title "The Wave".`,`A wave is a strong movement of water in one direction. It carries along everything in its way, like the movement that carried away the whole school. A single drop has no will of its own inside a wave, like the individual inside the group. A wave also rises quickly and then breaks, as the movement did at the rally.`]
+];
+
+const $=id=>document.getElementById(id), synth=window.speechSynthesis;
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+let part=0,words=[],cur=0,playing=false,token=0,est=0,seenBoundary=false,voice=null;
+
+function pickVoice(){
+  if(!synth)return;
+  const vs=synth.getVoices().filter(v=>/^en[-_]/i.test(v.lang)), us=vs.filter(v=>/^en[-_]US/i.test(v.lang));
+  voice=us.find(v=>v.localService)||us[0]||vs[0]||null;
+}
+if(synth){pickVoice();synth.onvoiceschanged=pickVoice}
+else{$('hint').textContent='This browser cannot read aloud. Try Chrome or Safari.';$('play').disabled=true}
+
+function mark(i){
+  if(words[cur])words[cur].el.classList.remove('w');
+  cur=i;const el=words[i]&&words[i].el;if(!el)return;
+  el.classList.add('w');
+  const r=el.getBoundingClientRect();
+  if(r.top<70||r.bottom>innerHeight-190)el.scrollIntoView({block:'center',behavior:'smooth'});
+}
+function setPlaying(v){playing=v;$('play').textContent=v?'❚❚ Pause':'▶ Listen'}
+function pause(){token++;clearTimeout(est);if(synth)synth.cancel();setPlaying(false)}
+
+// Speaks one sentence at a time, starting at word i. Pausing cancels speech and
+// remembers the word, because pause()/resume() is unreliable on Android.
+function speakFrom(i){
+  clearTimeout(est);
+  if(i>=words.length){setPlaying(false);mark(0);words[0].el.classList.remove('w');return}
+  let j=i;while(j<words.length-1&&!words[j].end)j++;
+  const offs=[];let text='';
+  for(let k=i;k<=j;k++){offs.push(text.length);text+=words[k].text+' '}
+  const u=new SpeechSynthesisUtterance(text),my=++token,rate=+$('rate').value;
+  u.lang=voice?voice.lang:'en-US';if(voice)u.voice=voice;u.rate=rate;
+  u.onboundary=e=>{
+    if(my!==token||(e.name&&e.name!=='word'))return;
+    seenBoundary=true;clearTimeout(est);
+    let k=0;while(k<offs.length-1&&offs[k+1]<=e.charIndex)k++;
+    mark(i+k);
+  };
+  u.onend=()=>{if(my===token)speakFrom(j+1)};
+  u.onerror=()=>{if(my===token){clearTimeout(est);setPlaying(false)}};
+  mark(i);synth.speak(u);
+  // Fallback for voices that send no word events: estimate from word length.
+  if(!seenBoundary){
+    const step=k=>{est=setTimeout(()=>{if(my!==token||seenBoundary||i+k>j)return;mark(i+k);step(k+1)},(words[i+k-1].text.length+1)*62/rate)};
+    step(1);
+  }
+}
+function play(i){if(!synth)return;synth.cancel();setPlaying(true);speakFrom(i)}
+
+function showPart(n){
+  pause();part=n;words=[];cur=0;
+  const P=PARTS[n],box=$('text');box.innerHTML='';
+  P.p.forEach(par=>{
+    const p=document.createElement('p');
+    par.split(' ').forEach(t=>{
+      const s=document.createElement('span'),i=words.length;
+      s.textContent=t;s.onclick=()=>play(i);
+      words.push({el:s,text:t,end:/[.!?:]["']?$/.test(t)});
+      p.append(s,' ');
+    });
+    box.append(p);
+  });
+  $('partno').textContent=`Part ${n+1} of ${PARTS.length}`;
+  $('title').textContent=P.t;$('he').textContent=P.he;
+  $('vocab').innerHTML=P.v.map(v=>`<tr><td>${v[0]}</td><td class="he" lang="he">${v[1]}</td></tr>`).join('');
+  [...$('chips').children].forEach((b,i)=>b.classList.toggle('on',i===n));
+  $('prev').disabled=n===0;$('next').disabled=n===PARTS.length-1;
+  scrollTo(0,0);
+}
+PARTS.forEach((_,i)=>{const b=document.createElement('button');b.textContent=i+1;b.onclick=()=>showPart(i);$('chips').append(b)});
+$('play').onclick=()=>playing?pause():play(cur);
+$('prev').onclick=()=>showPart(part-1);
+$('next').onclick=()=>showPart(part+1);
+$('rate').onchange=()=>{if(playing)play(cur)};
+addEventListener('pagehide',pause);
+
+$('nav').onclick=e=>{
+  const b=e.target.closest('button');if(!b)return;
+  pause();
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.s));
+  [...$('nav').children].forEach(x=>x.classList.toggle('on',x===b));
+  $('player').classList.toggle('on',b.dataset.s==='story');
+  scrollTo(0,0);
+};
+
+const heLine=t=>`<div class="hebox he" lang="he">${t}</div>`;
+$('peopleList').innerHTML=PEOPLE.map(p=>`<div class="card"><span class="tag">${p[1]}</span><h3>${p[0]}</h3>${p[2]}${heLine(p[3])}</div>`).join('');
+$('ideasList').innerHTML=IDEAS.map(p=>`<div class="card"><h3>${p[0]}</h3>${p[1]}${heLine(p[2])}</div>`).join('');
+$('examList').innerHTML=EXAM.map((q,i)=>`<div class="card"><h3>${i+1}. ${q[0]}</h3><details style="margin:10px 0 0"><summary>Show model answer</summary><div>${q[1]}</div></details></div>`).join('');
+
+let right=0,answered=0;
+const showScore=()=>$('score').textContent=`Score: ${right} / ${QUIZ.length}`+(answered===QUIZ.length?' · finished!':'');
+$('quizList').innerHTML=QUIZ.map((q,i)=>`<div class="card" data-q="${i}"><h3>${i+1}. ${esc(q[0])}</h3>${q[1].map((o,k)=>`<button class="opt" data-k="${k}">${esc(o)}</button>`).join('')}<div class="why">${esc(q[3])}</div></div>`).join('');
+$('quizList').onclick=e=>{
+  const b=e.target.closest('.opt');if(!b)return;
+  const card=b.closest('.card');if(card.classList.contains('done'))return;
+  const ans=QUIZ[card.dataset.q][2],k=+b.dataset.k;
+  card.classList.add('done');answered++;
+  card.querySelectorAll('.opt')[ans].classList.add('ok');
+  if(k===ans)right++;else b.classList.add('no');
+  showScore();
+};
+showScore();showPart(0);
+</script>
+</body>
+</html>
